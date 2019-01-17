@@ -8,15 +8,21 @@ public class PlayerAttack : MonoBehaviour {
     private PlayerFrigate player;
     [SerializeField]
     private BulletData bulletData;
+    [SerializeField, Range(1f, 60f)]
+    private float fireRate = 10f;
     [SerializeField]
     private Transform shootPoint;
+
+    private float shootTimer = 0f;
 
     private bool shoot = false;
 
 	// Update is called once per frame
 	void Update () {
+        shootTimer -= Time.deltaTime;
+
         GetInput();
-        if (shoot) Shoot();
+        if (shoot && shootTimer <= 0f) Shoot();
 	}
 
     private void GetInput()
@@ -26,6 +32,8 @@ public class PlayerAttack : MonoBehaviour {
 
     private void Shoot()
     {
+        shootTimer = 1 / fireRate;
+
         GameObject go = ObjectPool.Instances["Bullet"].GetObject();
 
         if (go == null) return;
