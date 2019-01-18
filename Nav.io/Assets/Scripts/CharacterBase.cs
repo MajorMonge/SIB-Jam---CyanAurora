@@ -5,18 +5,8 @@ using UnityEngine;
 public abstract class CharacterBase : MonoBehaviour {
 
     [SerializeField]
-    private int hitPoints;
+    protected int hitPoints;
 
-    public int HitPoints
-    {
-        get
-        {
-            return hitPoints;
-        }
-
-        set
-        {
-            hitPoints = value;
-        }
-    }
+    public abstract void TakeDamage(int damage);
+    public abstract void Die();
 }

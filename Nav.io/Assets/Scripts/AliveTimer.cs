@@ -11,6 +11,11 @@ public class AliveTimer : MonoBehaviour {
 
     private static bool stopped = false;
 
+    private void Awake()
+    {
+        PlayerFrigate.OnPlayerDied += (x) => { Stop(); };
+    }
+
     private void Update()
     {
         if (!stopped)
@@ -27,7 +32,9 @@ public class AliveTimer : MonoBehaviour {
             if (min < 10) sb.Append(0);
             sb.Append(min).Append(':');
             if (secs < 10) sb.Append(0);
-            sb.Append(secs).Append('.').Append(fraction);
+            sb.Append(secs).Append('.');
+            if (fraction < 10) sb.Append(0);
+            sb.Append(fraction);
 
             timer.text = sb.ToString();
         }

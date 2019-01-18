@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBase : CharacterBase {
+public abstract class EnemyBase : CharacterBase, IPoolable {
 
     [SerializeField]
     private int scoreOnKill = 0;
@@ -23,8 +23,28 @@ public class EnemyBase : CharacterBase {
 
     public static event Action<EnemyBase> OnAnyEnemyKilled = delegate { };
 
-    public void OnDestroy()
+    public override void TakeDamage(int damage)
+    {
+        hitPoints -= damage;
+
+        if (hitPoints <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void OnEnable()
+    {
+        OnSpawn();
+    }
+
+    public override void Die()
     {
         OnAnyEnemyKilled(this);
+        OnDespawn();
+        gameObject.SetActive(false);
     }
+
+    public abstract void OnSpawn();
+    public abstract void OnDespawn();
 }
