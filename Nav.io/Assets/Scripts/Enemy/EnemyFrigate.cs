@@ -56,8 +56,11 @@ public class EnemyFrigate : EnemyBase {
         if (collision.CompareTag("Player"))
         {
             PlayerFrigate pf = collision.GetComponent<PlayerFrigate>();
-
             pf.TakeDamage(100, gameObject);
+            TakeDamage(100, gameObject);
+        }else if( collision.CompareTag("Enemy")){
+            EnemyFrigate ef = collision.GetComponent<EnemyFrigate>();
+            ef.TakeDamage(100, gameObject);
             TakeDamage(100, gameObject);
         }
     }

@@ -37,6 +37,8 @@ public class RockSpawner : MonoBehaviour {
 
         if (go != null)
         {
+            float scale = Random.Range(1.0f, 1.25f);
+            go.transform.localScale = new Vector3(scale,scale,scale);
             go.transform.position = spawnPoint;
             go.SetActive(true);
         }
