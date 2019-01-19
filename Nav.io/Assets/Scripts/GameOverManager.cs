@@ -35,6 +35,12 @@ public class GameOverManager : MonoBehaviour {
 
     private void HandlePlayerDeath(PlayerFrigate pf)
     {
+        StartCoroutine(Wait(0.8f));
+    }
+
+    IEnumerator Wait(float time)
+    {
+        yield return new WaitForSeconds(time);
         isGameOver = true;
         gameOverText.SetActive(true);
     }
