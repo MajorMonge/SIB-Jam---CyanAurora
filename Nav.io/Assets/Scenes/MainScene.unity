@@ -638,7 +638,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 08c0c3eedaa3b7f4095871a0206d6252, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.57
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1073,7 +1073,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 'You died!
 
-    Press Enter to restart.'
+    Press Action to restart.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 54b4d2707f9d35f48a2de151c99e91f3, type: 2}
   m_sharedMaterial: {fileID: 21051162398548146, guid: 54b4d2707f9d35f48a2de151c99e91f3,
@@ -1154,7 +1154,7 @@ MonoBehaviour:
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -1251,7 +1251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instanceName: Enemy
-  prefab: {fileID: 1406959912089802, guid: dd21661de80adbf40a816c387e99542c, type: 2}
+  prefab: {fileID: 1018169303365596, guid: fdeba6d62b499d947933244b237b51a0, type: 2}
   initialQuantity: 20
   expandable: 0
 --- !u!114 &892831732
@@ -1857,7 +1857,32 @@ Prefab:
     - target: {fileID: 198707956670549604, guid: 1ebf8c75a5cf06148b9670ba0aacf32b,
         type: 2}
       propertyPath: simulationSpeed
-      value: 6.61
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 199827644491291322, guid: 1ebf8c75a5cf06148b9670ba0aacf32b,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3ced5db7721e095459a9fb8c36328e1e, type: 2}
+    - target: {fileID: 198707956670549604, guid: 1ebf8c75a5cf06148b9670ba0aacf32b,
+        type: 2}
+      propertyPath: ShapeModule.type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198707956670549604, guid: 1ebf8c75a5cf06148b9670ba0aacf32b,
+        type: 2}
+      propertyPath: ShapeModule.arc.value
+      value: 360
+      objectReference: {fileID: 0}
+    - target: {fileID: 198707956670549604, guid: 1ebf8c75a5cf06148b9670ba0aacf32b,
+        type: 2}
+      propertyPath: ShapeModule.angle
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 198707956670549604, guid: 1ebf8c75a5cf06148b9670ba0aacf32b,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ebf8c75a5cf06148b9670ba0aacf32b, type: 2}

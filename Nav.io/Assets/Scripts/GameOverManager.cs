@@ -20,7 +20,7 @@ public class GameOverManager : MonoBehaviour {
     {
         if (isGameOver)
         {
-            if (Input.GetButtonDown("Restart"))
+            if (Input.GetButtonDown("Fire1"))
             {
                 Debug.Log("Enter Pressed!");
                 SceneManager.LoadScene("MainScene");
