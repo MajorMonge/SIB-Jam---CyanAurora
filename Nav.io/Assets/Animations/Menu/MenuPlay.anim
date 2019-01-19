@@ -1330,7 +1330,7 @@ AnimationClip:
     messageOptions: 0
   - time: 3.142857
     functionName: ChangeScene
-    data: SampleScene
+    data: MainScene
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
