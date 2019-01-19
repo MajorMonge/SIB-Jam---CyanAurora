@@ -3,10 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBase : CharacterBase {
+public abstract class EnemyBase : CharacterBase, IPoolable {
 
     [SerializeField]
     private int scoreOnKill = 0;
+
+    private GameObject killer;
 
     public int ScoreOnKill
     {
@@ -21,10 +23,32 @@ public class EnemyBase : CharacterBase {
         }
     }
 
-    public static event Action<EnemyBase> OnAnyEnemyKilled = delegate { };
+    public static event Action<EnemyBase, GameObject> OnAnyEnemyKilled = delegate { };
 
-    public void OnDestroy()
+    public override void TakeDamage(int damage, GameObject source)
     {
-        OnAnyEnemyKilled(this);
+        hitPoints -= damage;
+
+        if (hitPoints <= 0)
+        {
+            killer = source;
+            Die();
+        }
     }
+
+    private void OnEnable()
+    {
+        OnSpawn();
+    }
+
+    public override void Die()
+    {
+        OnAnyEnemyKilled(this, killer);
+        OnDespawn();
+        gameObject.SetActive(false);
+        killer = null;
+    }
+
+    public abstract void OnSpawn();
+    public abstract void OnDespawn();
 }

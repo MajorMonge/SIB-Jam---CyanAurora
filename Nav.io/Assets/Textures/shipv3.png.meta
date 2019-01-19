@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 301508400e78eca4d8e0961ea4e93424
+guid: 095e7779600259044aef104ff2727432
 TextureImporter:
   fileIDToRecycleName:
-    21300000: EnemyBoat_0
-    21300002: EnemyBoat_1
-    21300004: EnemyBoat_2
+    21300000: shipv3_0
+    21300002: shipv3_1
+    21300004: shipv3_2
   externalObjects: {}
   serializedVersion: 6
   mipmaps:
@@ -109,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: EnemyBoat_0
+      name: shipv3_0
       rect:
         serializedVersion: 2
         x: 8
-        y: 34
+        y: 35
         width: 15
-        height: 29
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -123,19 +123,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 285901d63a8935945a1ca2ad3bb4109b
+      spriteID: f87f6a48250de4c41ad0233813907be6
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemyBoat_1
+      name: shipv3_1
       rect:
         serializedVersion: 2
         x: 40
-        y: 34
+        y: 35
         width: 15
-        height: 29
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,19 +143,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd5618e3ddc1a8e45a3091373b7baa64
+      spriteID: ed243d532fc3b6240be4b7ad62838f6f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemyBoat_2
+      name: shipv3_2
       rect:
         serializedVersion: 2
         x: 8
-        y: 2
+        y: 3
         width: 15
-        height: 29
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,7 +163,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 602d1e0c20cc42740978d744d9a728d9
+      spriteID: dd50a643b0a171547b143fd35ecfa41d
       vertices: []
       indices: 
       edges: []
@@ -171,7 +171,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 3eb9c13fc238b904caacfb052c81bd02
+    spriteID: 56c5e17e2f1e267479e1d8781c9e93e4
     vertices: []
     indices: 
     edges: []

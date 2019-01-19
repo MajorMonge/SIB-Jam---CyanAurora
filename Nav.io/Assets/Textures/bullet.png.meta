@@ -1,10 +1,7 @@
 fileFormatVersion: 2
-guid: 301508400e78eca4d8e0961ea4e93424
+guid: c3ae5b16a3c1fe14c8f5795a77c04bba
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: EnemyBoat_0
-    21300002: EnemyBoat_1
-    21300004: EnemyBoat_2
+  fileIDToRecycleName: {}
   externalObjects: {}
   serializedVersion: 6
   mipmaps:
@@ -43,12 +40,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 20
+  spritePixelsToUnits: 15
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -107,71 +104,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: EnemyBoat_0
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 34
-        width: 15
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 285901d63a8935945a1ca2ad3bb4109b
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EnemyBoat_1
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 34
-        width: 15
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bd5618e3ddc1a8e45a3091373b7baa64
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EnemyBoat_2
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 2
-        width: 15
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 602d1e0c20cc42740978d744d9a728d9
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 3eb9c13fc238b904caacfb052c81bd02
+    spriteID: 8edbbf948c57bb0408d41c4ef1a0ef11
     vertices: []
     indices: 
     edges: []

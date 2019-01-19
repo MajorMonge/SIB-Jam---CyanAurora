@@ -42,6 +42,21 @@ public class Bullet : MonoBehaviour, IPoolable {
         gameObject.SetActive(false);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        CharacterBase cb = collision.GetComponent<CharacterBase>();
+
+        if (cb != null)
+        {
+            if (cb == Owner) return;
+
+            cb.TakeDamage(data.damage, gameObject);
+        }
+
+        OnDespawn();
+        gameObject.SetActive(false);
+    }
+
     public void OnSpawn()
     {
 
