@@ -12,6 +12,8 @@ public class PlayerAttack : MonoBehaviour {
     private float fireRate = 10f;
     [SerializeField]
     private Transform shootPoint;
+    [SerializeField]
+    private Animator animator;
 
     private float shootTimer = 0f;
 
@@ -37,6 +39,8 @@ public class PlayerAttack : MonoBehaviour {
         GameObject go = ObjectPool.Instances["Bullet"].GetObject();
 
         if (go == null) return;
+
+        if (animator != null) animator.SetTrigger("Shoot");
 
         Bullet bullet = go.GetComponent<Bullet>();
 

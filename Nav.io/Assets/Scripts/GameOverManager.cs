@@ -22,7 +22,6 @@ public class GameOverManager : MonoBehaviour {
         {
             if (Input.GetButtonDown("Fire1"))
             {
-                Debug.Log("Enter Pressed!");
                 SceneManager.LoadScene("MainScene");
             }
         }
