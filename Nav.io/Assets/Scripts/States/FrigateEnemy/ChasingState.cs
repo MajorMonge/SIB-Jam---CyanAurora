@@ -7,6 +7,8 @@ public class ChasingState : State
     private Transform target;
     private EnemyFrigateAI thisAI;
 
+    private float shootCooldown;
+
     public ChasingState(Transform target)
     {
         this.target = target;
@@ -32,6 +34,8 @@ public class ChasingState : State
         if (!target.gameObject.activeInHierarchy) thisAI.ChangeState(new PatrollingState());
 
         Move();
+
+        ShootIfPossible();
     }
 
     private void Move()
@@ -43,5 +47,37 @@ public class ChasingState : State
         t.rotation = Quaternion.Lerp(t.rotation, to, thisAI.RotationLerpSpeed);
 
         t.position += t.up * Time.deltaTime * thisAI.ChaseSpeed;
+    }
+
+    private void ShootIfPossible()
+    {
+        if (shootCooldown > 0)
+        {
+            shootCooldown -= Time.deltaTime;
+            return;
+        }
+
+        Transform t = thisAI.transform;
+
+        RaycastHit2D[] rhs = Physics2D.RaycastAll(t.position, t.up);
+
+        if (rhs != null)
+        {
+            RaycastHit2D player = System.Array.Find(rhs, x => x.transform.CompareTag("Player"));
+
+            if (player)
+            {
+                Bullet bullet = ObjectPool.Instances["Bullet"].GetObject().GetComponent<Bullet>();
+
+                BulletData bd = thisAI.BulletData;
+                bd.direction = thisAI.transform.up;
+
+                bullet.transform.position = thisAI.transform.position;
+                bullet.SetupAndActivate(thisAI.GetComponent<EnemyFrigate>(), bd);
+                shootCooldown = 1 / thisAI.FireRate;
+            }
+        }
+
+
     }
 }

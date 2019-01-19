@@ -50,7 +50,7 @@ public class Bullet : MonoBehaviour, IPoolable {
         {
             if (cb == Owner) return;
 
-            cb.TakeDamage(data.damage);
+            cb.TakeDamage(data.damage, gameObject);
         }
 
         OnDespawn();

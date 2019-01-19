@@ -13,6 +13,10 @@ public class EnemyFrigateAI : StateMachine {
     private float rotationLerpSpeed = 0.1f;
     [SerializeField, Range(5f, 50f)]
     private float sightRadius;
+    [SerializeField, Range(1f, 60f)]
+    private float fireRate = 10f;
+    [SerializeField]
+    private BulletData bulletData;
 
     public float ChaseSpeed
     {
@@ -60,6 +64,30 @@ public class EnemyFrigateAI : StateMachine {
         set
         {
             sightRadius = value;
+        }
+    }
+    public float FireRate
+    {
+        get
+        {
+            return fireRate;
+        }
+
+        set
+        {
+            fireRate = value;
+        }
+    }
+    public BulletData BulletData
+    {
+        get
+        {
+            return bulletData;
+        }
+
+        set
+        {
+            bulletData = value;
         }
     }
 

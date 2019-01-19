@@ -8,6 +8,8 @@ public abstract class EnemyBase : CharacterBase, IPoolable {
     [SerializeField]
     private int scoreOnKill = 0;
 
+    private GameObject killer;
+
     public int ScoreOnKill
     {
         get
@@ -21,14 +23,15 @@ public abstract class EnemyBase : CharacterBase, IPoolable {
         }
     }
 
-    public static event Action<EnemyBase> OnAnyEnemyKilled = delegate { };
+    public static event Action<EnemyBase, GameObject> OnAnyEnemyKilled = delegate { };
 
-    public override void TakeDamage(int damage)
+    public override void TakeDamage(int damage, GameObject source)
     {
         hitPoints -= damage;
 
         if (hitPoints <= 0)
         {
+            killer = source;
             Die();
         }
     }
@@ -40,9 +43,10 @@ public abstract class EnemyBase : CharacterBase, IPoolable {
 
     public override void Die()
     {
-        OnAnyEnemyKilled(this);
+        OnAnyEnemyKilled(this, killer);
         OnDespawn();
         gameObject.SetActive(false);
+        killer = null;
     }
 
     public abstract void OnSpawn();

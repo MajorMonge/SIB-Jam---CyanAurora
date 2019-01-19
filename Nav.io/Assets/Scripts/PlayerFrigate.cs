@@ -10,7 +10,7 @@ public class PlayerFrigate : CharacterBase {
 
     public static event Action<PlayerFrigate> OnPlayerDied = delegate { };
 
-    public override void TakeDamage(int damage)
+    public override void TakeDamage(int damage, GameObject source)
     {
         hitPoints -= damage;
 

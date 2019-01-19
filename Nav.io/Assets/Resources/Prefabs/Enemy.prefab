@@ -183,6 +183,11 @@ MonoBehaviour:
   chaseSpeed: 4
   rotationLerpSpeed: 0.025
   sightRadius: 5
+  fireRate: 10
+  bulletData:
+    speed: 10
+    damage: 10
+    lifeTime: 2
 --- !u!114 &114907695834682910
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -194,8 +199,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aa5956796f23184f9869740eb625ab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 0
-  scoreOnKill: 0
+  hitPoints: 1
+  scoreOnKill: 500
   pSysWave: {fileID: 198149334545936664}
 --- !u!198 &198149334545936664
 ParticleSystem:

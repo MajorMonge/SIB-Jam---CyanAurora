@@ -46,4 +46,9 @@ public class ObjectPool : MonoBehaviour {
 
         return go;
     }
+
+    private void OnDestroy()
+    {
+        Instances.Clear();
+    }
 }

@@ -7,6 +7,6 @@ public abstract class CharacterBase : MonoBehaviour {
     [SerializeField]
     protected int hitPoints;
 
-    public abstract void TakeDamage(int damage);
+    public abstract void TakeDamage(int damage, GameObject source);
     public abstract void Die();
 }
